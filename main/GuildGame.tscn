@@ -17,46 +17,188 @@ margin_top = 10.0
 margin_right = -10.0
 margin_bottom = -10.0
 
-[node name="Margin" type="MarginContainer" parent="Margin"]
+[node name="Grid" type="GridContainer" parent="Margin"]
 margin_right = 1004.0
 margin_bottom = 580.0
+columns = 4
 
-[node name="Panel" type="Panel" parent="Margin/Margin"]
-margin_right = 1004.0
-margin_bottom = 580.0
-rect_min_size = Vector2( 400, 200 )
+[node name="Woodcutters" type="PanelContainer" parent="Margin/Grid"]
+margin_right = 160.0
+margin_bottom = 100.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Margin/Margin"]
-margin_right = 1004.0
-margin_bottom = 580.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Margin/Margin/VBoxContainer"]
-margin_right = 1004.0
-margin_bottom = 20.0
-
-[node name="Button" type="Button" parent="Margin/Margin/VBoxContainer/HBoxContainer"]
-margin_right = 80.0
-margin_bottom = 20.0
-toggle_mode = true
-text = "Hlello"
-
-[node name="Label" type="Label" parent="Margin/Margin/VBoxContainer/HBoxContainer"]
-margin_left = 80.0
+[node name="VBox" type="VBoxContainer" parent="Margin/Grid/Woodcutters"]
+margin_left = 4.0
 margin_top = 2.0
-margin_right = 94.0
+margin_right = 156.0
+margin_bottom = 98.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 8
+
+[node name="Header" type="Label" parent="Margin/Grid/Woodcutters/VBox"]
+margin_right = 152.0
+margin_bottom = 16.0
+text = "Woodcutters"
+align = 1
+valign = 1
+
+[node name="HBoxWorkers" type="HBoxContainer" parent="Margin/Grid/Woodcutters/VBox"]
+margin_top = 24.0
+margin_right = 152.0
+margin_bottom = 44.0
+
+[node name="CutterMinus" type="Button" parent="Margin/Grid/Woodcutters/VBox/HBoxWorkers"]
+margin_right = 20.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+text = "-"
+
+[node name="Num" type="Label" parent="Margin/Grid/Woodcutters/VBox/HBoxWorkers"]
+margin_left = 20.0
+margin_top = 2.0
+margin_right = 130.0
 margin_bottom = 18.0
+size_flags_horizontal = 7
 text = "0"
+align = 1
+valign = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Margin/Margin/VBoxContainer/HBoxContainer"]
-margin_left = 94.0
-margin_right = 1004.0
+[node name="CutterPlus" type="Button" parent="Margin/Grid/Woodcutters/VBox/HBoxWorkers"]
+margin_left = 130.0
+margin_right = 152.0
 margin_bottom = 20.0
+size_flags_horizontal = 0
+text = "+"
+
+[node name="HBoxResource" type="HBoxContainer" parent="Margin/Grid/Woodcutters/VBox"]
+margin_top = 52.0
+margin_right = 152.0
+margin_bottom = 68.0
+
+[node name="Desc" type="Label" parent="Margin/Grid/Woodcutters/VBox/HBoxResource"]
+margin_right = 60.0
+margin_bottom = 16.0
+text = "Wood"
+align = 1
+valign = 1
+
+[node name="Num" type="Label" parent="Margin/Grid/Woodcutters/VBox/HBoxResource"]
+margin_left = 60.0
+margin_right = 152.0
+margin_bottom = 16.0
+size_flags_horizontal = 11
+text = "0"
+align = 2
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Margin/Grid/Woodcutters/VBox"]
+margin_top = 76.0
+margin_right = 152.0
+margin_bottom = 96.0
 size_flags_horizontal = 3
-value = 40.0
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Margin/Margin/VBoxContainer"]
-margin_top = 20.0
-margin_right = 1004.0
+[node name="PanelContainer2" type="PanelContainer" parent="Margin/Grid"]
+margin_left = 164.0
+margin_right = 426.0
+margin_bottom = 68.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="Margin/Grid/PanelContainer2"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 258.0
+margin_bottom = 66.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 8
+
+[node name="Header" type="Label" parent="Margin/Grid/PanelContainer2/VBox"]
+margin_right = 254.0
+margin_bottom = 16.0
+text = "Important Statistics"
+align = 1
+valign = 1
+
+[node name="HBoxWorkers" type="HBoxContainer" parent="Margin/Grid/PanelContainer2/VBox"]
+visible = false
+margin_top = 24.0
+margin_right = 74.0
+margin_bottom = 44.0
+
+[node name="Minus" type="Button" parent="Margin/Grid/PanelContainer2/VBox/HBoxWorkers"]
+margin_right = 20.0
 margin_bottom = 20.0
+size_flags_horizontal = 0
+text = "-"
 
-[connection signal="toggled" from="Margin/Margin/VBoxContainer/HBoxContainer/Button" to="." method="_on_Button_toggled"]
+[node name="Num" type="Label" parent="Margin/Grid/PanelContainer2/VBox/HBoxWorkers"]
+margin_left = 20.0
+margin_top = 2.0
+margin_right = 52.0
+margin_bottom = 18.0
+size_flags_horizontal = 7
+text = "0"
+align = 1
+valign = 1
+
+[node name="Plus" type="Button" parent="Margin/Grid/PanelContainer2/VBox/HBoxWorkers"]
+margin_left = 52.0
+margin_right = 74.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+text = "+"
+
+[node name="HBoxResource" type="HBoxContainer" parent="Margin/Grid/PanelContainer2/VBox"]
+margin_top = 24.0
+margin_right = 254.0
+margin_bottom = 40.0
+
+[node name="Desc" type="Label" parent="Margin/Grid/PanelContainer2/VBox/HBoxResource"]
+margin_right = 138.0
+margin_bottom = 16.0
+text = "Unemployed"
+align = 1
+valign = 1
+
+[node name="Num" type="Label" parent="Margin/Grid/PanelContainer2/VBox/HBoxResource"]
+margin_left = 138.0
+margin_right = 254.0
+margin_bottom = 16.0
+size_flags_horizontal = 11
+text = "0"
+align = 2
+valign = 1
+
+[node name="HBoxResource2" type="HBoxContainer" parent="Margin/Grid/PanelContainer2/VBox"]
+margin_top = 48.0
+margin_right = 254.0
+margin_bottom = 64.0
+
+[node name="Desc" type="Label" parent="Margin/Grid/PanelContainer2/VBox/HBoxResource2"]
+margin_right = 142.0
+margin_bottom = 16.0
+text = "Housing for"
+align = 1
+valign = 1
+
+[node name="Num" type="Label" parent="Margin/Grid/PanelContainer2/VBox/HBoxResource2"]
+margin_left = 142.0
+margin_right = 254.0
+margin_bottom = 16.0
+size_flags_horizontal = 11
+text = "0"
+align = 2
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Margin/Grid/PanelContainer2/VBox"]
+visible = false
+margin_top = 48.0
+margin_right = 74.0
+margin_bottom = 68.0
+size_flags_horizontal = 3
+
+[connection signal="pressed" from="Margin/Grid/Woodcutters/VBox/HBoxWorkers/CutterMinus" to="." method="_on_CutterMinus_pressed"]
+[connection signal="pressed" from="Margin/Grid/Woodcutters/VBox/HBoxWorkers/CutterPlus" to="." method="_on_CutterPlus_pressed"]
