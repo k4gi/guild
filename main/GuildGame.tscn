@@ -12,15 +12,15 @@ script = ExtResource( 1 )
 [node name="Margin" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
-margin_top = 10.0
-margin_right = -10.0
-margin_bottom = -10.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
 
 [node name="Grid" type="GridContainer" parent="Margin"]
-margin_right = 1004.0
-margin_bottom = 580.0
-columns = 4
+margin_right = 596.0
+margin_bottom = 284.0
+columns = 3
 
 [node name="Woodcutters" type="PanelContainer" parent="Margin/Grid"]
 margin_right = 160.0
@@ -60,7 +60,7 @@ margin_left = 20.0
 margin_top = 2.0
 margin_right = 130.0
 margin_bottom = 18.0
-size_flags_horizontal = 7
+size_flags_horizontal = 3
 text = "0"
 align = 1
 valign = 1
@@ -99,9 +99,129 @@ margin_right = 152.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
 
-[node name="PanelContainer2" type="PanelContainer" parent="Margin/Grid"]
+[node name="Construction" type="PanelContainer" parent="Margin/Grid"]
 margin_left = 164.0
-margin_right = 426.0
+margin_right = 330.0
+margin_bottom = 164.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="Margin/Grid/Construction"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 162.0
+margin_bottom = 162.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/separation = 8
+
+[node name="Header" type="Label" parent="Margin/Grid/Construction/VBox"]
+margin_right = 158.0
+margin_bottom = 16.0
+text = "Construction"
+align = 1
+valign = 1
+
+[node name="HBoxWorkers" type="HBoxContainer" parent="Margin/Grid/Construction/VBox"]
+margin_top = 24.0
+margin_right = 158.0
+margin_bottom = 44.0
+
+[node name="BuilderMinus" type="Button" parent="Margin/Grid/Construction/VBox/HBoxWorkers"]
+margin_right = 20.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+text = "-"
+
+[node name="Num" type="Label" parent="Margin/Grid/Construction/VBox/HBoxWorkers"]
+margin_left = 20.0
+margin_top = 2.0
+margin_right = 136.0
+margin_bottom = 18.0
+size_flags_horizontal = 3
+text = "0"
+align = 1
+valign = 1
+
+[node name="BuilderPlus" type="Button" parent="Margin/Grid/Construction/VBox/HBoxWorkers"]
+margin_left = 136.0
+margin_right = 158.0
+margin_bottom = 20.0
+size_flags_horizontal = 0
+text = "+"
+
+[node name="BuildSelector" type="OptionButton" parent="Margin/Grid/Construction/VBox"]
+margin_top = 52.0
+margin_right = 158.0
+margin_bottom = 72.0
+items = [ "House", null, false, 0, null, "Farm", null, false, 1, null ]
+selected = 0
+
+[node name="VBoxHouses" type="VBoxContainer" parent="Margin/Grid/Construction/VBox"]
+margin_top = 80.0
+margin_right = 158.0
+margin_bottom = 116.0
+
+[node name="HBox" type="HBoxContainer" parent="Margin/Grid/Construction/VBox/VBoxHouses"]
+margin_right = 158.0
+margin_bottom = 16.0
+
+[node name="Desc" type="Label" parent="Margin/Grid/Construction/VBox/VBoxHouses/HBox"]
+margin_right = 84.0
+margin_bottom = 16.0
+text = "Houses"
+align = 1
+valign = 1
+
+[node name="Num" type="Label" parent="Margin/Grid/Construction/VBox/VBoxHouses/HBox"]
+margin_left = 84.0
+margin_right = 158.0
+margin_bottom = 16.0
+size_flags_horizontal = 11
+text = "0"
+align = 2
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Margin/Grid/Construction/VBox/VBoxHouses"]
+margin_top = 16.0
+margin_right = 158.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+
+[node name="VBoxFarms" type="VBoxContainer" parent="Margin/Grid/Construction/VBox"]
+margin_top = 124.0
+margin_right = 158.0
+margin_bottom = 160.0
+
+[node name="HBox" type="HBoxContainer" parent="Margin/Grid/Construction/VBox/VBoxFarms"]
+margin_right = 158.0
+margin_bottom = 16.0
+
+[node name="Desc" type="Label" parent="Margin/Grid/Construction/VBox/VBoxFarms/HBox"]
+margin_right = 72.0
+margin_bottom = 16.0
+text = "Farms"
+align = 1
+valign = 1
+
+[node name="Num" type="Label" parent="Margin/Grid/Construction/VBox/VBoxFarms/HBox"]
+margin_left = 72.0
+margin_right = 158.0
+margin_bottom = 16.0
+size_flags_horizontal = 11
+text = "0"
+align = 2
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Margin/Grid/Construction/VBox/VBoxFarms"]
+margin_top = 16.0
+margin_right = 158.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+
+[node name="PanelContainer2" type="PanelContainer" parent="Margin/Grid"]
+margin_left = 334.0
+margin_right = 596.0
 margin_bottom = 68.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -202,3 +322,6 @@ size_flags_horizontal = 3
 
 [connection signal="pressed" from="Margin/Grid/Woodcutters/VBox/HBoxWorkers/CutterMinus" to="." method="_on_CutterMinus_pressed"]
 [connection signal="pressed" from="Margin/Grid/Woodcutters/VBox/HBoxWorkers/CutterPlus" to="." method="_on_CutterPlus_pressed"]
+[connection signal="pressed" from="Margin/Grid/Construction/VBox/HBoxWorkers/BuilderMinus" to="." method="_on_BuilderMinus_pressed"]
+[connection signal="pressed" from="Margin/Grid/Construction/VBox/HBoxWorkers/BuilderPlus" to="." method="_on_BuilderPlus_pressed"]
+[connection signal="item_selected" from="Margin/Grid/Construction/VBox/BuildSelector" to="." method="_on_BuildSelector_item_selected"]

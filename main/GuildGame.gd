@@ -10,10 +10,10 @@ onready var housenum = $Margin/Grid/PanelContainer2/VBox/HBoxResource2/Num
 
 var cuttermulti = 10
 
-var cutter = 1
-var wood = 2
-var woodprogress = 5
-var workers = 3
+var cutter = 0
+var wood = 0
+var woodprogress = 0
+var workers = 4
 var house = 4
 
 
@@ -47,3 +47,15 @@ func _on_CutterPlus_pressed():
 	if workers > 0:
 		workers -= 1
 		cutter += 1
+
+
+func _on_BuilderMinus_pressed():
+	pass # Replace with function body.
+
+
+func _on_BuilderPlus_pressed():
+	pass # Replace with function body.
+
+
+func _on_BuildSelector_item_selected(index):
+	pass
