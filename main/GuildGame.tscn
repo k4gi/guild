@@ -17,18 +17,49 @@ margin_top = 8.0
 margin_right = -8.0
 margin_bottom = -8.0
 
-[node name="Grid" type="GridContainer" parent="Margin"]
+[node name="VBoxMain" type="VBoxContainer" parent="Margin"]
 margin_right = 604.0
 margin_bottom = 284.0
+
+[node name="Time" type="PanelContainer" parent="Margin/VBoxMain"]
+margin_right = 604.0
+margin_bottom = 24.0
+size_flags_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="Margin/VBoxMain/Time"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 600.0
+margin_bottom = 22.0
+size_flags_vertical = 0
+custom_constants/separation = 8
+
+[node name="Header" type="Label" parent="Margin/VBoxMain/Time/VBox"]
+visible = false
+margin_right = 116.0
+margin_bottom = 16.0
+text = "Migration"
+align = 1
+valign = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Margin/VBoxMain/Time/VBox"]
+margin_right = 596.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Grid" type="GridContainer" parent="Margin/VBoxMain"]
+margin_top = 24.0
+margin_right = 604.0
+margin_bottom = 240.0
 columns = 3
 
-[node name="Statistics" type="PanelContainer" parent="Margin/Grid"]
+[node name="Statistics" type="PanelContainer" parent="Margin/VBoxMain/Grid"]
 margin_right = 262.0
 margin_bottom = 116.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="VBox" type="VBoxContainer" parent="Margin/Grid/Statistics"]
+[node name="VBox" type="VBoxContainer" parent="Margin/VBoxMain/Grid/Statistics"]
 margin_left = 4.0
 margin_top = 2.0
 margin_right = 258.0
@@ -37,26 +68,26 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/separation = 8
 
-[node name="Header" type="Label" parent="Margin/Grid/Statistics/VBox"]
+[node name="Header" type="Label" parent="Margin/VBoxMain/Grid/Statistics/VBox"]
 margin_right = 254.0
 margin_bottom = 16.0
 text = "Important Statistics"
 align = 1
 valign = 1
 
-[node name="HBoxWorkers" type="HBoxContainer" parent="Margin/Grid/Statistics/VBox"]
+[node name="HBoxWorkers" type="HBoxContainer" parent="Margin/VBoxMain/Grid/Statistics/VBox"]
 margin_top = 24.0
 margin_right = 254.0
 margin_bottom = 40.0
 
-[node name="Desc" type="Label" parent="Margin/Grid/Statistics/VBox/HBoxWorkers"]
+[node name="Desc" type="Label" parent="Margin/VBoxMain/Grid/Statistics/VBox/HBoxWorkers"]
 margin_right = 138.0
 margin_bottom = 16.0
 text = "Unemployed"
 align = 1
 valign = 1
 
-[node name="Num" type="Label" parent="Margin/Grid/Statistics/VBox/HBoxWorkers"]
+[node name="Num" type="Label" parent="Margin/VBoxMain/Grid/Statistics/VBox/HBoxWorkers"]
 margin_left = 138.0
 margin_right = 254.0
 margin_bottom = 16.0
@@ -65,19 +96,19 @@ text = "0"
 align = 2
 valign = 1
 
-[node name="HBoxPopulation" type="HBoxContainer" parent="Margin/Grid/Statistics/VBox"]
+[node name="HBoxPopulation" type="HBoxContainer" parent="Margin/VBoxMain/Grid/Statistics/VBox"]
 margin_top = 48.0
 margin_right = 254.0
 margin_bottom = 64.0
 
-[node name="Desc" type="Label" parent="Margin/Grid/Statistics/VBox/HBoxPopulation"]
+[node name="Desc" type="Label" parent="Margin/VBoxMain/Grid/Statistics/VBox/HBoxPopulation"]
 margin_right = 130.0
 margin_bottom = 16.0
 text = "Population"
 align = 1
 valign = 1
 
-[node name="Num" type="Label" parent="Margin/Grid/Statistics/VBox/HBoxPopulation"]
+[node name="Num" type="Label" parent="Margin/VBoxMain/Grid/Statistics/VBox/HBoxPopulation"]
 margin_left = 130.0
 margin_right = 254.0
 margin_bottom = 16.0
@@ -86,19 +117,19 @@ text = "0"
 align = 2
 valign = 1
 
-[node name="HBoxHousing" type="HBoxContainer" parent="Margin/Grid/Statistics/VBox"]
+[node name="HBoxHousing" type="HBoxContainer" parent="Margin/VBoxMain/Grid/Statistics/VBox"]
 margin_top = 72.0
 margin_right = 254.0
 margin_bottom = 88.0
 
-[node name="Desc" type="Label" parent="Margin/Grid/Statistics/VBox/HBoxHousing"]
+[node name="Desc" type="Label" parent="Margin/VBoxMain/Grid/Statistics/VBox/HBoxHousing"]
 margin_right = 194.0
 margin_bottom = 16.0
 text = "Housing surplus"
 align = 1
 valign = 1
 
-[node name="Num" type="Label" parent="Margin/Grid/Statistics/VBox/HBoxHousing"]
+[node name="Num" type="Label" parent="Margin/VBoxMain/Grid/Statistics/VBox/HBoxHousing"]
 margin_left = 194.0
 margin_right = 254.0
 margin_bottom = 16.0
@@ -107,19 +138,19 @@ text = "0"
 align = 2
 valign = 1
 
-[node name="HBoxFood" type="HBoxContainer" parent="Margin/Grid/Statistics/VBox"]
+[node name="HBoxFood" type="HBoxContainer" parent="Margin/VBoxMain/Grid/Statistics/VBox"]
 margin_top = 96.0
 margin_right = 254.0
 margin_bottom = 112.0
 
-[node name="Desc" type="Label" parent="Margin/Grid/Statistics/VBox/HBoxFood"]
+[node name="Desc" type="Label" parent="Margin/VBoxMain/Grid/Statistics/VBox/HBoxFood"]
 margin_right = 156.0
 margin_bottom = 16.0
 text = "Food surplus"
 align = 1
 valign = 1
 
-[node name="Num" type="Label" parent="Margin/Grid/Statistics/VBox/HBoxFood"]
+[node name="Num" type="Label" parent="Margin/VBoxMain/Grid/Statistics/VBox/HBoxFood"]
 margin_left = 156.0
 margin_right = 254.0
 margin_bottom = 16.0
@@ -128,14 +159,14 @@ text = "0"
 align = 2
 valign = 1
 
-[node name="Woodcutters" type="PanelContainer" parent="Margin/Grid"]
+[node name="Woodcutters" type="PanelContainer" parent="Margin/VBoxMain/Grid"]
 margin_left = 266.0
 margin_right = 426.0
 margin_bottom = 100.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="VBox" type="VBoxContainer" parent="Margin/Grid/Woodcutters"]
+[node name="VBox" type="VBoxContainer" parent="Margin/VBoxMain/Grid/Woodcutters"]
 margin_left = 4.0
 margin_top = 2.0
 margin_right = 156.0
@@ -144,25 +175,25 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/separation = 8
 
-[node name="Header" type="Label" parent="Margin/Grid/Woodcutters/VBox"]
+[node name="Header" type="Label" parent="Margin/VBoxMain/Grid/Woodcutters/VBox"]
 margin_right = 152.0
 margin_bottom = 16.0
 text = "Woodcutters"
 align = 1
 valign = 1
 
-[node name="HBoxWorkers" type="HBoxContainer" parent="Margin/Grid/Woodcutters/VBox"]
+[node name="HBoxWorkers" type="HBoxContainer" parent="Margin/VBoxMain/Grid/Woodcutters/VBox"]
 margin_top = 24.0
 margin_right = 152.0
 margin_bottom = 44.0
 
-[node name="CutterMinus" type="Button" parent="Margin/Grid/Woodcutters/VBox/HBoxWorkers"]
+[node name="CutterMinus" type="Button" parent="Margin/VBoxMain/Grid/Woodcutters/VBox/HBoxWorkers"]
 margin_right = 20.0
 margin_bottom = 20.0
 size_flags_horizontal = 0
 text = "-"
 
-[node name="Num" type="Label" parent="Margin/Grid/Woodcutters/VBox/HBoxWorkers"]
+[node name="Num" type="Label" parent="Margin/VBoxMain/Grid/Woodcutters/VBox/HBoxWorkers"]
 margin_left = 20.0
 margin_top = 2.0
 margin_right = 130.0
@@ -172,26 +203,26 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="CutterPlus" type="Button" parent="Margin/Grid/Woodcutters/VBox/HBoxWorkers"]
+[node name="CutterPlus" type="Button" parent="Margin/VBoxMain/Grid/Woodcutters/VBox/HBoxWorkers"]
 margin_left = 130.0
 margin_right = 152.0
 margin_bottom = 20.0
 size_flags_horizontal = 0
 text = "+"
 
-[node name="HBoxResource" type="HBoxContainer" parent="Margin/Grid/Woodcutters/VBox"]
+[node name="HBoxResource" type="HBoxContainer" parent="Margin/VBoxMain/Grid/Woodcutters/VBox"]
 margin_top = 52.0
 margin_right = 152.0
 margin_bottom = 68.0
 
-[node name="Desc" type="Label" parent="Margin/Grid/Woodcutters/VBox/HBoxResource"]
+[node name="Desc" type="Label" parent="Margin/VBoxMain/Grid/Woodcutters/VBox/HBoxResource"]
 margin_right = 60.0
 margin_bottom = 16.0
 text = "Wood"
 align = 1
 valign = 1
 
-[node name="Num" type="Label" parent="Margin/Grid/Woodcutters/VBox/HBoxResource"]
+[node name="Num" type="Label" parent="Margin/VBoxMain/Grid/Woodcutters/VBox/HBoxResource"]
 margin_left = 60.0
 margin_right = 152.0
 margin_bottom = 16.0
@@ -200,20 +231,20 @@ text = "0"
 align = 2
 valign = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Margin/Grid/Woodcutters/VBox"]
+[node name="ProgressBar" type="ProgressBar" parent="Margin/VBoxMain/Grid/Woodcutters/VBox"]
 margin_top = 76.0
 margin_right = 152.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
 
-[node name="Construction" type="PanelContainer" parent="Margin/Grid"]
+[node name="Construction" type="PanelContainer" parent="Margin/VBoxMain/Grid"]
 margin_left = 430.0
 margin_right = 596.0
 margin_bottom = 164.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="VBox" type="VBoxContainer" parent="Margin/Grid/Construction"]
+[node name="VBox" type="VBoxContainer" parent="Margin/VBoxMain/Grid/Construction"]
 margin_left = 4.0
 margin_top = 2.0
 margin_right = 162.0
@@ -222,25 +253,25 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/separation = 8
 
-[node name="Header" type="Label" parent="Margin/Grid/Construction/VBox"]
+[node name="Header" type="Label" parent="Margin/VBoxMain/Grid/Construction/VBox"]
 margin_right = 158.0
 margin_bottom = 16.0
 text = "Construction"
 align = 1
 valign = 1
 
-[node name="HBoxWorkers" type="HBoxContainer" parent="Margin/Grid/Construction/VBox"]
+[node name="HBoxWorkers" type="HBoxContainer" parent="Margin/VBoxMain/Grid/Construction/VBox"]
 margin_top = 24.0
 margin_right = 158.0
 margin_bottom = 44.0
 
-[node name="BuilderMinus" type="Button" parent="Margin/Grid/Construction/VBox/HBoxWorkers"]
+[node name="BuilderMinus" type="Button" parent="Margin/VBoxMain/Grid/Construction/VBox/HBoxWorkers"]
 margin_right = 20.0
 margin_bottom = 20.0
 size_flags_horizontal = 0
 text = "-"
 
-[node name="Num" type="Label" parent="Margin/Grid/Construction/VBox/HBoxWorkers"]
+[node name="Num" type="Label" parent="Margin/VBoxMain/Grid/Construction/VBox/HBoxWorkers"]
 margin_left = 20.0
 margin_top = 2.0
 margin_right = 136.0
@@ -250,14 +281,14 @@ text = "0"
 align = 1
 valign = 1
 
-[node name="BuilderPlus" type="Button" parent="Margin/Grid/Construction/VBox/HBoxWorkers"]
+[node name="BuilderPlus" type="Button" parent="Margin/VBoxMain/Grid/Construction/VBox/HBoxWorkers"]
 margin_left = 136.0
 margin_right = 158.0
 margin_bottom = 20.0
 size_flags_horizontal = 0
 text = "+"
 
-[node name="BuildSelector" type="OptionButton" parent="Margin/Grid/Construction/VBox"]
+[node name="BuildSelector" type="OptionButton" parent="Margin/VBoxMain/Grid/Construction/VBox"]
 margin_top = 52.0
 margin_right = 158.0
 margin_bottom = 72.0
@@ -265,23 +296,23 @@ text = "no work"
 items = [ "no work", null, false, 0, null, "House", null, false, 1, null, "Farm", null, false, 2, null ]
 selected = 0
 
-[node name="VBoxHouses" type="VBoxContainer" parent="Margin/Grid/Construction/VBox"]
+[node name="VBoxHouses" type="VBoxContainer" parent="Margin/VBoxMain/Grid/Construction/VBox"]
 margin_top = 80.0
 margin_right = 158.0
 margin_bottom = 116.0
 
-[node name="HBox" type="HBoxContainer" parent="Margin/Grid/Construction/VBox/VBoxHouses"]
+[node name="HBox" type="HBoxContainer" parent="Margin/VBoxMain/Grid/Construction/VBox/VBoxHouses"]
 margin_right = 158.0
 margin_bottom = 16.0
 
-[node name="Desc" type="Label" parent="Margin/Grid/Construction/VBox/VBoxHouses/HBox"]
+[node name="Desc" type="Label" parent="Margin/VBoxMain/Grid/Construction/VBox/VBoxHouses/HBox"]
 margin_right = 84.0
 margin_bottom = 16.0
 text = "Houses"
 align = 1
 valign = 1
 
-[node name="Num" type="Label" parent="Margin/Grid/Construction/VBox/VBoxHouses/HBox"]
+[node name="Num" type="Label" parent="Margin/VBoxMain/Grid/Construction/VBox/VBoxHouses/HBox"]
 margin_left = 84.0
 margin_right = 158.0
 margin_bottom = 16.0
@@ -290,29 +321,29 @@ text = "0"
 align = 2
 valign = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Margin/Grid/Construction/VBox/VBoxHouses"]
+[node name="ProgressBar" type="ProgressBar" parent="Margin/VBoxMain/Grid/Construction/VBox/VBoxHouses"]
 margin_top = 16.0
 margin_right = 158.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
 
-[node name="VBoxFarms" type="VBoxContainer" parent="Margin/Grid/Construction/VBox"]
+[node name="VBoxFarms" type="VBoxContainer" parent="Margin/VBoxMain/Grid/Construction/VBox"]
 margin_top = 124.0
 margin_right = 158.0
 margin_bottom = 160.0
 
-[node name="HBox" type="HBoxContainer" parent="Margin/Grid/Construction/VBox/VBoxFarms"]
+[node name="HBox" type="HBoxContainer" parent="Margin/VBoxMain/Grid/Construction/VBox/VBoxFarms"]
 margin_right = 158.0
 margin_bottom = 16.0
 
-[node name="Desc" type="Label" parent="Margin/Grid/Construction/VBox/VBoxFarms/HBox"]
+[node name="Desc" type="Label" parent="Margin/VBoxMain/Grid/Construction/VBox/VBoxFarms/HBox"]
 margin_right = 72.0
 margin_bottom = 16.0
 text = "Farms"
 align = 1
 valign = 1
 
-[node name="Num" type="Label" parent="Margin/Grid/Construction/VBox/VBoxFarms/HBox"]
+[node name="Num" type="Label" parent="Margin/VBoxMain/Grid/Construction/VBox/VBoxFarms/HBox"]
 margin_left = 72.0
 margin_right = 158.0
 margin_bottom = 16.0
@@ -321,20 +352,20 @@ text = "0"
 align = 2
 valign = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Margin/Grid/Construction/VBox/VBoxFarms"]
+[node name="ProgressBar" type="ProgressBar" parent="Margin/VBoxMain/Grid/Construction/VBox/VBoxFarms"]
 margin_top = 16.0
 margin_right = 158.0
 margin_bottom = 36.0
 size_flags_horizontal = 3
 
-[node name="Migration" type="PanelContainer" parent="Margin/Grid"]
+[node name="Migration" type="PanelContainer" parent="Margin/VBoxMain/Grid"]
 margin_top = 168.0
 margin_right = 124.0
 margin_bottom = 216.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="VBox" type="VBoxContainer" parent="Margin/Grid/Migration"]
+[node name="VBox" type="VBoxContainer" parent="Margin/VBoxMain/Grid/Migration"]
 margin_left = 4.0
 margin_top = 2.0
 margin_right = 120.0
@@ -343,21 +374,21 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/separation = 8
 
-[node name="Header" type="Label" parent="Margin/Grid/Migration/VBox"]
+[node name="Header" type="Label" parent="Margin/VBoxMain/Grid/Migration/VBox"]
 margin_right = 116.0
 margin_bottom = 16.0
 text = "Migration"
 align = 1
 valign = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="Margin/Grid/Migration/VBox"]
+[node name="ProgressBar" type="ProgressBar" parent="Margin/VBoxMain/Grid/Migration/VBox"]
 margin_top = 24.0
 margin_right = 116.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 
-[connection signal="pressed" from="Margin/Grid/Woodcutters/VBox/HBoxWorkers/CutterMinus" to="." method="_on_CutterMinus_pressed"]
-[connection signal="pressed" from="Margin/Grid/Woodcutters/VBox/HBoxWorkers/CutterPlus" to="." method="_on_CutterPlus_pressed"]
-[connection signal="pressed" from="Margin/Grid/Construction/VBox/HBoxWorkers/BuilderMinus" to="." method="_on_BuilderMinus_pressed"]
-[connection signal="pressed" from="Margin/Grid/Construction/VBox/HBoxWorkers/BuilderPlus" to="." method="_on_BuilderPlus_pressed"]
-[connection signal="item_selected" from="Margin/Grid/Construction/VBox/BuildSelector" to="." method="_on_BuildSelector_item_selected"]
+[connection signal="pressed" from="Margin/VBoxMain/Grid/Woodcutters/VBox/HBoxWorkers/CutterMinus" to="." method="_on_CutterMinus_pressed"]
+[connection signal="pressed" from="Margin/VBoxMain/Grid/Woodcutters/VBox/HBoxWorkers/CutterPlus" to="." method="_on_CutterPlus_pressed"]
+[connection signal="pressed" from="Margin/VBoxMain/Grid/Construction/VBox/HBoxWorkers/BuilderMinus" to="." method="_on_BuilderMinus_pressed"]
+[connection signal="pressed" from="Margin/VBoxMain/Grid/Construction/VBox/HBoxWorkers/BuilderPlus" to="." method="_on_BuilderPlus_pressed"]
+[connection signal="item_selected" from="Margin/VBoxMain/Grid/Construction/VBox/BuildSelector" to="." method="_on_BuildSelector_item_selected"]
